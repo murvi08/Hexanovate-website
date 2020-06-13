@@ -6,7 +6,7 @@ from django.db.models.signals import pre_save
 from django.urls import reverse
 from django_ckeditor_5.fields import CKEditor5Field
 
-from hexanovate_website.utils import unique_slug_generator
+from hexanovate.utils import unique_slug_generator
 
 
 def get_filename_ext(filepath):
