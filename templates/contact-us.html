@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Hexanovate: About {% endblock %}
+
+{% block content %}
+
+{% include "snippets/hero-wrap.html" with title='Contact Us' from='Home' to='Contact' %}
+
+<section class="ftco-section contact-section">
+    <div class="container">
+        <div class="row d-flex mb-5 contact-info justify-content-center">
+            <div class="col-md-8">
+                <div class="row mb-5">
+                    <div class="col-md-4 text-center py-4">
+                        <div class="icon">
+                            <span class="icon-map-o"></span>
+                        </div>
+                        <p><span>Address:</span>89/412 Nehru nagar, Mohadi Road, Near Mehrun lake, Jalgaon</p>
+                    </div>
+                    <div class="col-md-4 text-center border-height py-4">
+                        <div class="icon">
+                            <span class="icon-mobile-phone"></span>
+                        </div>
+                        <p><span>Phone:</span> <a href="tel://1234567920">+91 7820932512</a></p>
+                    </div>
+                    <div class="col-md-4 text-center py-4">
+                        <div class="icon">
+                            <span class="icon-envelope-o"></span>
+                        </div>
+                        <p><span>Email:</span> <a href="mailto:info@yoursite.com">hexanovate@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row block-9 justify-content-center mb-5">
+            <div class="col-md-8 mb-md-5">
+                <h2 class="text-center">In case of any questions <br>please do not hesitate to send us a message</h2>
+
+				{% include "contact/contact-form.html" %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

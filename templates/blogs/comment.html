@@ -1,0 +1,11 @@
+{% load static %}
+
+<div class="vcard bio">
+    <img src="{% static 'images/hexo_fin.jpg' %}" alt="Image placeholder">
+</div>
+<div class="comment-body">
+    <h3 style="text-align: left;">{{ comment.name }}</h3>
+    <div class="meta mb-2">{{ comment.timestamp }}</div>
+    <p>{{ comment.message }}</p>
+<!--    <p><a href="#" class="reply">Reply</a></p>-->
+</div>

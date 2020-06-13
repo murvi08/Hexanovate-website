@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Hexanovate: Gallery {% endblock %}
+
+{% block content %}
+
+{% include "snippets/hero-wrap.html" with title='Gallery' from='Home' to='Gallery' %}
+
+<section class="ftco-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="project mb-4 img ftco-animate d-flex justify-content-center align-items-center"
+                     style="background-image: url({% static 'images/train.png' %});">
+                    <!-- <div class="overlay"></div>
+                    <div class="text text-center p-4">
+                        <h3><a href="#">Branding &amp; Illustration Design</a></h3>
+                        <span>Web Design</span>
+                    </div> -->
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project mb-4 img ftco-animate d-flex justify-content-center align-items-center"
+                     style="background-image: url({% static 'images/hexo.jpg' %});">
+                    <!-- <div class="overlay"></div> -->
+                    <a href="#" class="btn-site d-flex align-items-center justify-content-center"></a>
+                    <!-- <div class="text text-center p-4">
+                        <h3><a href="#">Branding &amp; Illustration Design</a></h3>
+                        <span>Web Design</span>
+                    </div> -->
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="project mb-4 img ftco-animate d-flex justify-content-center align-items-center"
+                     style="background-image: url({% static 'images/hexo_fin.jpg' %});">
+                    <!-- <div class="overlay"></div> -->
+                    <a href="#" class="btn-site d-flex align-items-center justify-content-center"></a>
+                    <!-- <div class="text text-center p-4">
+                        <h3><a href="#">Branding &amp; Illustration Design</a></h3>
+                        <span>Web Design</span>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+		{% include "blogs/pagination.html" %}
+    </div>
+</section>
+
+{% include "base/get-in-touch.html" with data="Do you have a project to discuss?" %}
+
+{% endblock %}

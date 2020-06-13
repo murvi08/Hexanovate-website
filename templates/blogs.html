@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Hexanovate: About {% endblock %}
+
+{% block content %}
+
+{% include "snippets/hero-wrap.html" with title='Our Blogs' from='Home' to='Blogs' %}
+
+    <section class="ftco-section bg-light">
+        <div class="container">
+            <div class="row">
+				{% for blog in blogs %}
+                    <div class="col-md-6 col-lg-4 ftco-animate">
+						{% include "blogs/blog-card.html" with blog=blog %}
+                    </div>
+                {% endfor %}
+            </div>
+
+			{% include "blogs/pagination.html" %}
+        </div>
+    </section>
+
+{% include "base/get-in-touch.html" with data="Want to reach out to us?" %}
+
+{% endblock %}

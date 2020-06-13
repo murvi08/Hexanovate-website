@@ -1,0 +1,12 @@
+#IDE
+.idea
+.vscode
+
+# misc
+.DS_Store
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+fixtures

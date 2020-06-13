@@ -1,0 +1,1 @@
+web: gunicorn hexanovate_website.wsgi

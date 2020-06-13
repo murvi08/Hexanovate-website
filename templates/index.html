@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Hexanovate{% endblock %}
+
+{% block content %}
+	{% include "base/hero-banner.html" %}
+
+	{% include "base/services.html" %}
+
+	{% include "base/work-with-us-banner.html" %}
+
+	{% include "base/principles.html" %}
+
+	{% include "base/question.html" %}
+
+	{% include "base/projects.html" %}
+
+	{% include "base/recent-blogs.html" with blogs=blogs %}
+
+{% include "base/get-in-touch.html" with data="Do you have a project to discuss?" %}
+
+{% endblock %}
