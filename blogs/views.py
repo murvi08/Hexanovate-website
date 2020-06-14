@@ -1,7 +1,8 @@
+from django.db.models import Count
 from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, DetailView
 
-from blogs.models import Blog
+from blogs.models import Blog, Category
 
 
 class BlogListView(ListView):
@@ -27,4 +28,5 @@ class BlogDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(BlogDetailView, self).get_context_data()
         context['blogs'] = self.queryset
+        context['categories'] = Category.objects.annotate(blogs_count=Count('blogs')).order_by('-blogs_count')[:5]
         return context

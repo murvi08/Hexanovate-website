@@ -3,6 +3,7 @@ from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
+from django.views.generic import TemplateView
 
 from hexanovate_website.views import (
     HomePageView, AboutPageView, PortfolioPageView,
@@ -10,7 +11,9 @@ from hexanovate_website.views import (
 )
 
 urlpatterns = [
+    path('google-auth/', TemplateView.as_view(template_name="google-auth.html")),
     path('admin/', admin.site.urls),
+    path('accounts/', include('allauth.urls')),
 
     url(r'^$', HomePageView.as_view(), name='home'),
     url(r'^about/$', AboutPageView.as_view(), name='about'),
