@@ -1,3 +1,10 @@
+{% url 'home' as home %}
+{% url 'about' as about %}
+{% url 'portfolio' as portfolio %}
+{% url 'blogs:blog-list' as blog_list %}
+{% url 'gallery' as gallery %}
+{% url 'contact-us' as contact_us %}
+
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
         <a class="navbar-brand" href="/">
@@ -10,26 +17,26 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="/portfolio" class="nav-link">Portfolio</a></li>
-                <li class="nav-item"><a href="/#services" class="nav-link">Services</a></li>
+                <li class="nav-item {% if request.path == home %}active{% endif %}"><a href="{{ home }}" class="nav-link">Home</a></li>
+                <li class="nav-item {% if request.path == about %}active{% endif %}"><a href="{{ about }}" class="nav-link">About</a></li>
+                <li class="nav-item {% if request.path == portfolio %}active{% endif %}"><a href="{{ portfolio }}" class="nav-link">Portfolio</a></li>
+                <li class="nav-item {% if request.path == '/#services' %}active{% endif %}"><a href="/#services" class="nav-link">Services</a></li>
                 <!-- <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li> -->
-                <li class="nav-item dropdown ">
+                <li class="nav-item dropdown {% if request.path == blog_list %}active{% endif %}">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Blog
                     </a>
                     <div class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/blogs">Blog Posts</a>
+                        <a class="dropdown-item" href="{{ blog_list }}">Blog Posts</a>
                         <a class="dropdown-item" href="#">Resources</a>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a href="/gallery" class="nav-link">Gallery</a>
+                <li class="nav-item {% if request.path == gallery %}active{% endif %}">
+                    <a href="{{ gallery }}" class="nav-link">Gallery</a>
                 </li>
                 <li class="nav-item cta mr-md-2">
-                    <a href="/contact-us" class="nav-link">Get in touch</a>
+                    <a href="{{ contact_us }}" class="nav-link">Get in touch</a>
                 </li>
 
             </ul>
