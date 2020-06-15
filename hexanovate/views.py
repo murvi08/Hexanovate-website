@@ -3,8 +3,24 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.views.generic import CreateView
 
-from hexanovate.models import ContactMessage, Subscriber
+from hexanovate.models import ContactMessage, Subscriber, Question
 from hexanovate.utils import send_get_in_touch_email_to_host, send_get_in_touch_email_to_user, send_subscription_email
+
+
+class QuestionPostView(CreateView):
+    model = Question
+    fields = ['first_name', 'last_name', 'guidance', 'phone', 'message']
+
+    def post(self, request, *args, **kwargs):
+        Question.objects.create(
+            first_name=request.POST.get('first-name'),
+            last_name=request.POST.get('last-name'),
+            guidance=request.POST.get('guidance'),
+            phone=request.POST.get('phone'),
+            message=request.POST.get('message')
+        )
+        messages.success(request, "We have received your request! We will reach out to you soon!")
+        return HttpResponseRedirect(reverse('home'))
 
 
 class ContactMessagePostView(CreateView):
@@ -40,8 +56,3 @@ class SubscribeView(CreateView):
         else:
             messages.warning(request, "You are already subscribed to Hexanovate")
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-
-
-
-
-
