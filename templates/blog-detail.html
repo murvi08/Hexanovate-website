@@ -8,6 +8,9 @@
         #editorBlogContent img {
             width: 100% !important;
         }
+        #editorBlogContent h3 {
+                text-align: left;
+        }
     </style>
 {% endblock %}
 
@@ -18,7 +21,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 ftco-animate">
-					<h2 class="mb-3">{{ blog.title|title }}</h2>
+					<h2 class="mb-3" style="font-size: 35px; font-weight: 700;">{{ blog.title|title }}</h2>
 
 					<!-- Blog Content extracted from Rich Text editor -->
 					<div id="editorBlogContent">
@@ -145,7 +148,7 @@
 						<ul class="categories">
 							{% for category in categories %}
 								<li>
-									<a href="#">{{ category.title }}<span>({{ category.blogs.all|length }})</span></a>
+									<a href="#" style="color: black">{{ category.title }}<span>({{ category.blogs.all|length }})</span></a>
 								</li>
 							{% endfor %}
 						</ul>

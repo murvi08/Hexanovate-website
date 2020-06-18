@@ -139,7 +139,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
@@ -153,35 +153,6 @@ CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery
 
 CKEDITOR_UPLOAD_PATH = os.path.join(MEDIA_ROOT, 'media')
 CKEDITOR_IMAGE_BACKEND = "pillow"
-
-# CKEDITOR_CONFIGS = {
-#     'default': {
-#         'toolbar': 'CMS2',
-#         'toolbar_CMS2': [
-#             {'name': 'clipboard', 'items': ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo']},
-#             {'name': 'editing', 'items': ['Find', 'Replace', '-', 'SelectAll', '-', 'Scayt']},
-#             ['cmsplugins', 'cmswidget'],
-#             ['Maximize', ''],
-#             ['Source', '-', 'ShowBlocks'],
-#             '/',
-#             {'name': 'basicstyles',
-#              'items': ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'CopyFormatting',
-#                        'RemoveFormat'
-#                        ]
-#              },
-#             {'name': 'paragraph',
-#              'items': ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-',
-#                        'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']},
-#             {'name': 'links', 'items': ['Link', 'Unlink', 'Anchor']},
-#             {'name': 'insert', 'items': ['Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak']},
-#             '/',
-#             {'name': 'styles', 'items': ['Styles', 'Format', 'Font', 'FontSize']},
-#             {'name': 'colors', 'items': ['TextColor', 'BGColor']},
-#         ],
-#         'skin': 'moono',
-#         'toolbarCanCollapse': True,
-#     },
-# }
 
 customColorPalette = [
     {

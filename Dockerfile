@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 
 RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
-COPY src/requirements.txt /usr/src/app/
+COPY ./requirements.txt /usr/src/app/
 RUN pip install -r requirements.txt
 
-COPY src/. /usr/src/app/
+COPY . /usr/src/app/
