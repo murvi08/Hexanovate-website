@@ -27,6 +27,6 @@ class BlogDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(BlogDetailView, self).get_context_data()
-        context['blogs'] = self.queryset
+        context['blogs'] = self.queryset.order_by('-date')
         context['categories'] = Category.objects.annotate(blogs_count=Count('blogs')).order_by('-blogs_count')[:5]
         return context

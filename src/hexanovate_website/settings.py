@@ -1,6 +1,8 @@
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+from hexanovate_website.config import SMTP_HOST, SMTP_HOST_EMAIL, SMTP_HOST_PASSWORD
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
@@ -51,9 +53,9 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 # Email Settings
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp.gmail.com"
-EMAIL_HOST_USER = "thephenom1708@gmail.com"
-EMAIL_HOST_PASSWORD = ""
+EMAIL_HOST = SMTP_HOST
+EMAIL_HOST_USER = SMTP_HOST_EMAIL
+EMAIL_HOST_PASSWORD = SMTP_HOST_PASSWORD
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False

@@ -1,3 +1,5 @@
+{% load static %}
+
 {% url 'home' as home %}
 {% url 'about' as about %}
 {% url 'portfolio' as portfolio %}
@@ -8,7 +10,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
         <a class="navbar-brand" href="/">
-            <img src="/static/images/hex_final.png" width="180" height="80">
+            <img src="{% static 'images/hex_final.png' %}" width="180" height="80">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,10 +19,16 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item {% if request.path == home %}active{% endif %}"><a href="{{ home }}" class="nav-link">Home</a></li>
-                <li class="nav-item {% if request.path == about %}active{% endif %}"><a href="{{ about }}" class="nav-link">About</a></li>
-                <li class="nav-item {% if request.path == portfolio %}active{% endif %}"><a href="{{ portfolio }}" class="nav-link">Portfolio</a></li>
-                <li class="nav-item {% if request.path == '/#services' %}active{% endif %}"><a href="/#services" class="nav-link">Services</a></li>
+                <li class="nav-item {% if request.path == home %}active{% endif %}"><a href="{{ home }}"
+                                                                                       class="nav-link">Home</a></li>
+                <li class="nav-item {% if request.path == about %}active{% endif %}"><a href="{{ about }}"
+                                                                                        class="nav-link">About</a></li>
+                <li class="nav-item {% if request.path == portfolio %}active{% endif %}"><a href="{{ portfolio }}"
+                                                                                            class="nav-link">Portfolio</a>
+                </li>
+                <li class="nav-item {% if request.path == '/#services' %}active{% endif %}"><a href="/#services"
+                                                                                               class="nav-link">Services</a>
+                </li>
                 <!-- <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li> -->
                 <li class="nav-item dropdown {% if request.path == blog_list %}active{% endif %}">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -39,6 +47,11 @@
                     <a href="{{ contact_us }}" class="nav-link">Get in touch</a>
                 </li>
 
+                {% comment %}<li class="nav-item">
+                    <button class="loginBtn loginBtn--google">
+                        Sign In with Google
+                    </button>
+                </li>{% endcomment %}
             </ul>
         </div>
     </div>
