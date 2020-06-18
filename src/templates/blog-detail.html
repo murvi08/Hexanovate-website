@@ -13,7 +13,7 @@
 
 {% block content %}
 
-	{% include "snippets/hero-wrap.html" with title='Blog' from='Blog Posts' to='Blog Detail' %}
+	{% include "snippets/hero-wrap.html" with title='Blog' from='Blog Posts' to=blog.title|title %}
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row">
