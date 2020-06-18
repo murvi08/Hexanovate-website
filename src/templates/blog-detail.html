@@ -3,10 +3,17 @@
 
 {% block title %} {{ blog.title|title }} {% endblock %}
 
+{% block base_head %}
+    <style>
+        #editorBlogContent img {
+            width: 100% !important;
+        }
+    </style>
+{% endblock %}
+
 {% block content %}
 
 	{% include "snippets/hero-wrap.html" with title='Blog' from='Blog Posts' to='Blog Detail' %}
-
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row">
@@ -199,10 +206,9 @@
 
 	{% include "base/get-in-touch.html" with data="Do you have a project to discuss?" %}
 	<script>
-        const editorContent = document.getElementById("editorBlogContent");
-        editorContent.getElementsByTagName("img").width = "100%";
-	</script>
-
+        {#const editorContent = document.getElementById("editorBlogContent");#}
+        {#editorContent.getElementsByTagName("img").src = "fewhdbf"#}
+    </script>
 {% endblock %}
 
 
