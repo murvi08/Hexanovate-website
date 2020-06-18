@@ -1,1 +1,1 @@
-web: gunicorn hexanovate_website.wsgi
+web: gunicorn hexanovate_website.wsgi --log-file -
