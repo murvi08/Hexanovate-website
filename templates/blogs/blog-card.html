@@ -13,7 +13,7 @@
         <h3 class="heading">
             <a href="{{ blog.get_absolute_url }}">{{ blog.title|title }}</a>
         </h3>
-        <p>{{ blog.short_description }}</p>
+        <p>{{ blog.short_description|truncatewords:35 }}</p>
         <div class="d-flex align-items-center mt-4">
             <p class="mb-0">
                 <a href="{{ blog.get_absolute_url }}" class="btn btn-primary">Read More <span class="ion-ios-arrow-round-forward"/>
