@@ -10,7 +10,7 @@ class HomePageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(HomePageView, self).get_context_data(**kwargs)
-        context['blogs'] = blog_queryset.order_by("-date")
+        context['recent_blogs'] = blog_queryset.order_by("-date")
         return context
 
 
@@ -19,7 +19,7 @@ class AboutPageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(AboutPageView, self).get_context_data()
-        context['blogs'] = blog_queryset.order_by("-date")
+        context['recent_blogs'] = blog_queryset.order_by("-date")
         return context
 
 
@@ -28,7 +28,7 @@ class PortfolioPageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(PortfolioPageView, self).get_context_data()
-        context['blogs'] = blog_queryset.order_by("-date")
+        context['recent_blogs'] = blog_queryset.order_by("-date")
         return context
 
 
@@ -37,7 +37,7 @@ class GalleryPageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(GalleryPageView, self).get_context_data()
-        context['blogs'] = blog_queryset.order_by("-date")
+        context['recent_blogs'] = blog_queryset.order_by("-date")
         return context
 
 
@@ -46,5 +46,5 @@ class ContactUsPageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(ContactUsPageView, self).get_context_data()
-        context['blogs'] = blog_queryset.order_by("-date")
+        context['recent_blogs'] = blog_queryset.order_by("-date")
         return context

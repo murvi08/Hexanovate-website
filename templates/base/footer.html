@@ -23,7 +23,7 @@
             <div class="col-md-6 col-lg-3">
                 <div class="ftco-footer-widget mb-5">
                     <h2 class="ftco-heading-2">Recent Blog</h2>
-                    {% for blog in blogs %}
+                    {% for blog in recent_blogs %}
 						{% if forloop.counter < 3 %}
                         <div class="block-21 mb-4 d-flex">
                             <a href="{{ blog.get_absolute_url }}" class="blog-img mr-4" style="background-image: url({{ blog.thumbnail.url }});"></a>

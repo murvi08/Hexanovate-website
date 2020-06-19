@@ -9,9 +9,21 @@ class BlogListView(ListView):
     queryset = Blog.objects.filter(active=True)
     template_name = "blogs.html"
 
+    def get_queryset(self):
+        filter_category = self.request.GET.get('category')
+        if filter_category is not None:
+            return self.queryset.filter(category__id=filter_category)
+        return self.queryset
+
     def get_context_data(self, *args, **kwargs):
         context = super(BlogListView, self).get_context_data()
-        context['blogs'] = self.queryset.order_by('-date')
+        context['blogs'] = self.get_queryset().order_by('-date')
+        context['categories'] = Category.objects.all()
+        context['recent_blogs'] = self.queryset.order_by('-date')[:2]
+
+        filter_category = self.request.GET.get('category')
+        if filter_category is not None:
+            context['selected_category'] = int(filter_category)
         return context
 
 
@@ -27,6 +39,6 @@ class BlogDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(BlogDetailView, self).get_context_data()
-        context['blogs'] = self.queryset.order_by('-date')
+        context['recent_blogs'] = self.queryset.order_by('-date')[:2]
         context['categories'] = Category.objects.annotate(blogs_count=Count('blogs')).order_by('-blogs_count')[:5]
         return context
