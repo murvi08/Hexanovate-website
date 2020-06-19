@@ -1,5 +1,6 @@
 from django.contrib import admin
 
+from hexanovate.actions import export_as_csv_action
 from hexanovate.models import ContactMessage, Subscriber, Question
 
 
@@ -23,6 +24,17 @@ class ContactMessageAdmin(admin.ModelAdmin):
     list_filter = ['timestamp']
     search_fields = ['name', 'email', 'subject']
 
+    actions = [export_as_csv_action("CSV Export", fields=['timestamp', 'name', 'email', 'subject', 'message'])]
+
 
 admin.site.register(ContactMessage, ContactMessageAdmin)
-admin.site.register(Subscriber)
+
+
+class SubscriberAdmin(admin.ModelAdmin):
+    list_display = ['email']
+    search_fields = ['email']
+
+    actions = [export_as_csv_action("CSV Export", fields=['email'])]
+
+
+admin.site.register(Subscriber, SubscriberAdmin)

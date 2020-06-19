@@ -61,4 +61,3 @@ def send_get_in_touch_email_to_host(contact_message):
     sender_email = EMAIL_HOST_USER
 
     send_mail(subject, None, sender_email, [EMAIL_HOST_USER], fail_silently=False, html_message=html_message)
-
