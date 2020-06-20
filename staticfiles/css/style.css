@@ -9963,7 +9963,7 @@ font-size: 19px;
 
 .sidebar-box {
   margin-bottom: 30px;
-  padding: 0 25px 25px;
+  /* padding: 0 25px 25px; */
   font-size: 15px;
   width: 100%; }
   .sidebar-box h3 {
