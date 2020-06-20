@@ -37,18 +37,31 @@
 							{% endfor %}
 						</div>
 					</div>
+					
+					<!-- Social Share Buttons-->
+					<div class="sidebar-box ftco-animate">
+					    <h4>Share this</h4>
+					        <ul class="tagcloud m-0 p-0 ">
+					            <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.hexanovate.in/"><i><img src="https://img.icons8.com/cute-clipart/30/000000/facebook-new.png"/></i>{% post_to_facebook object_or_url "Post to Facebook!" %}</a>
+					            <a href="#"><i><img src="https://img.icons8.com/color/30/000000/whatsapp.png"/></a>
+					            <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ request.build_absolute_uri }}&title={{blog.title|title}}&source={{ request.build_absolute_uri }}"><i></i><img src="https://img.icons8.com/cute-clipart/30/000000/linkedin.png"/></a>
+					            <a href="https://twitter.com/home?status=I'm%20going%20to%20learn%20to%20Code...%20Come%20build%20an%20web%20apsp%20with%20me!%20%23CFE%20and%20@justinmitchel%20https://www.hexanovate.in"><i><img src="https://img.icons8.com/cute-clipart/30/000000/twitter.png"/></i></a>
+					        </ul>
+							
+
+							{% load social_share %}
+							
+
+							{% post_to_facebook object_or_url "Post to Facebook!" %}
+							{% post_to_twitter "You shouldn't miss this awesome blog: {{object.title}}. Check out now!" object_or_url "Post to Twitter" %}
+							{% post_to_whatsapp object_or_url "Share via WhatsApp" %}
+							{% post_to_linkedin object.title object_or_url "Post to LinkedIn" %}
+					</div>
+					
 
 					{% include "blogs/about-hexanovate.html" %}
 
-					<!--                <div class="sidebar-box ftco-animate">-->
-					<!--                    <h4>Share this</h4>-->
-					<!--                    <ul class="tagcloud m-0 p-0 ">-->
-					<!--                        <a href="#"><i class="fa fa-whatsapp"></i></a>-->
-					<!--                        <a href="#"><i class="fa fa-facebook"></i></a>-->
-					<!--                        <a href="#"><i class="fa fa-whatsapp"></i></a>-->
-					<!--                        <a href="#"><i class="fa fa-linkedin"></i></a>-->
-					<!--                    </ul>-->
-					<!--                </div>-->
+					                
 
 					<div class="pt-5 mt-5">
 						<h3 class="mb-5 h4 font-weight-bold">{{ blog.comments.all|length }} Comments</h3>

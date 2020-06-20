@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # 'django_quill',
     'django_ckeditor_5',
+    'django_social_share',
 
     'hexanovate',
     'blogs',
