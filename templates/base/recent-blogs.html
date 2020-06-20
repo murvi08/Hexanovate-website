@@ -7,7 +7,7 @@
             </div>
         </div>
         <div class="row">
-			{% for blog in blogs %}
+			{% for blog in recent_blogs %}
 				{% if forloop.counter < 4 %}
 					<div class="col-md-6 col-lg-4 ftco-animate">
 						{% include 'blogs/blog-card.html' with  blog=blog %}
