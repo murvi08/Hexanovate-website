@@ -41,7 +41,7 @@ class Tag(models.Model):
 
 class Blog(models.Model):
     title = models.CharField(max_length=128)
-    slug = models.SlugField(blank=True, unique=True)
+    slug = models.SlugField(blank=True, unique=True, max_length=128)
     thumbnail = models.ImageField(upload_to=upload_image_path)
     category = models.ForeignKey(Category, blank=True, null=True, related_name='blogs', on_delete=models.CASCADE)
     author = models.CharField(max_length=128)
