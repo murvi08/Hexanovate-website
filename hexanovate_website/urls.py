@@ -21,7 +21,7 @@ urlpatterns = [
     url(r'^gallery/$', GalleryPageView.as_view(), name='gallery'),
     url(r'^contact-us/$', ContactUsPageView.as_view(), name='contact-us'),
 
-    url(r'^/', include("hexanovate.urls", namespace='hexanovate')),
+    url(r'^', include("hexanovate.urls", namespace='hexanovate')),
     url(r'^blogs/', include("blogs.urls", namespace='blogs')),
 
     path("ckeditor5/", include('django_ckeditor_5.urls')),
