@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     'hexanovate',
     'blogs',
+    'resources',
     'comments'
 
 ]
