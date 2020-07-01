@@ -1,0 +1,17 @@
+<div class="resource-entry">
+    <a href="{{ resource.attachment.url }}" download class="block-20 d-flex align-items-end"
+       style="background-image: url({{ resource.thumbnail.url }});"></a>
+    <div class="text bg-white p-4">
+        <h3 class="heading">
+            <a href="">{{ resource.title|title }}</a>
+        </h3>
+        <p>{{ resource.short_description|truncatewords:35 }}</p>
+        <div class="d-flex align-items-center mt-4">
+            <p class="mb-0">
+                <a href="{{ resource.attachment.url }}" class="btn btn-primary">
+                    Download <span><i class="ion-md-cloud-download"></i></span>
+                </a>
+            </p>
+        </div>
+    </div>
+</div>

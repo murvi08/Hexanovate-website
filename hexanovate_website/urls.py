@@ -23,6 +23,7 @@ urlpatterns = [
 
     url(r'^', include("hexanovate.urls", namespace='hexanovate')),
     url(r'^blogs/', include("blogs.urls", namespace='blogs')),
+    url(r'^resources/', include("resources.urls", namespace='resources')),
 
     path("ckeditor5/", include('django_ckeditor_5.urls')),
 ]

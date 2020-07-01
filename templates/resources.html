@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Resources {% endblock %}
+
+{% block content %}
+
+{% include "snippets/hero-wrap.html" with title='Resources' from='Home' to='Resources' %}
+
+    <section class="ftco-section bg-light justify-content-center">
+        <div class="container">
+            <div class="row ">
+                <div class="col-sm-4">
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="category-selection" class="form-check-label">Select Category</label>
+                            <select id="category-selection" class="form-control" name="category" placeholder="Select Category"
+                                    onchange="selectCategory(this.value);">
+                                    <option value="0">Show All</option>
+                                {% for category in categories %}
+                                    <option {% if selected_category == category.id %}selected{% endif %}
+                                            value="{{ category.id }}">{{ category.title }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+				{% for resource in resources %}
+                    <div class="col-md-6 col-lg-4 ftco-animate">
+						{% include "resources/resource-card.html" with resource=resource %}
+                    </div>
+                {% endfor %}
+            </div>
+
+{#			{% include "blogs/pagination.html" %}#}
+        </div>
+    </section>
+
+{% include "base/get-in-touch.html" with data="Want to reach out to us?" %}
+
+    <script>
+        function selectCategory(category_id) {
+            if(category_id === "0")
+                window.location.search = "";
+            else
+                window.location.search = "?category=" + category_id;
+        }
+    </script>
+
+{% endblock %}
