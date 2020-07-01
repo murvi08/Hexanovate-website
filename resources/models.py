@@ -7,18 +7,18 @@ from hexanovate.utils import unique_slug_generator
 
 def upload_image_path(instance, filename):
     name, ext = get_filename_ext(filename)
-    final_filename = '{new_filename}{ext}'.format(new_filename=filename, ext=ext)
+    final_filename = '{new_filename}{ext}'.format(new_filename=name, ext=ext)
     return "resources/thumbnails/{final_filename}".format(
-        new_filename=filename,
+        new_filename=name,
         final_filename=final_filename
     )
 
 
 def upload_resource_path(instance, filename):
     name, ext = get_filename_ext(filename)
-    final_filename = '{new_filename}{ext}'.format(new_filename=filename, ext=ext)
+    final_filename = '{new_filename}{ext}'.format(new_filename=name, ext=ext)
     return "resources/attachments/{final_filename}".format(
-        new_filename=filename,
+        new_filename=name,
         final_filename=final_filename
     )
 

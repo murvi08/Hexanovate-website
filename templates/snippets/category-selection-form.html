@@ -1,0 +1,14 @@
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="category-selection" class="form-check-label">Select Category</label>
+        <select id="category-selection" class="form-control" name="category" placeholder="Select Category"
+                onchange="selectCategory(this.value);">
+            <option value="0">Show All</option>
+            {% for category in categories %}
+                <option {% if selected_category == category.id %}selected{% endif %}
+                        value="{{ category.id }}">{{ category.title }}</option>
+            {% endfor %}
+        </select>
+    </div>
+</form>

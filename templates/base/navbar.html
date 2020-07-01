@@ -4,6 +4,7 @@
 {% url 'about' as about %}
 {% url 'portfolio' as portfolio %}
 {% url 'blogs:blog-list' as blog_list %}
+{% url 'resources:resource-list' as resource_list %}
 {% url 'gallery' as gallery %}
 {% url 'contact-us' as contact_us %}
 
@@ -37,7 +38,7 @@
                     </a>
                     <div class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{ blog_list }}">Blog Posts</a>
-                        <a class="dropdown-item" href="#">Resources</a>
+                        <a class="dropdown-item" href="{{ resource_list }}">Resources</a>
                     </div>
                 </li>
                 <li class="nav-item {% if request.path == gallery %}active{% endif %}">

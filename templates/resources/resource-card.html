@@ -3,12 +3,12 @@
        style="background-image: url({{ resource.thumbnail.url }});"></a>
     <div class="text bg-white p-4">
         <h3 class="heading">
-            <a href="">{{ resource.title|title }}</a>
+            <a href="{{ resource.attachment.url }}" download>{{ resource.title|title }}</a>
         </h3>
         <p>{{ resource.short_description|truncatewords:35 }}</p>
         <div class="d-flex align-items-center mt-4">
             <p class="mb-0">
-                <a href="{{ resource.attachment.url }}" class="btn btn-primary">
+                <a href="{{ resource.attachment.url }}" download class="btn btn-primary">
                     Download <span><i class="ion-md-cloud-download"></i></span>
                 </a>
             </p>
